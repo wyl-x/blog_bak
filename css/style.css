@@ -265,12 +265,13 @@ a {
   margin: 112px auto 0;
 }
 #container .mid-col {
-  position: absolute;
+/*  position: absolute;
   right: 0;
   top: 0;
   min-height: 100%;
   left: 300px;
-  width: auto;
+  width: auto;*/
+  margin: 0 auto;
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
