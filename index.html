@@ -358,11 +358,14 @@
 
       
         
-          
-            <h3 id="静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node-js框架快速搭建静态页面服务器："><a href="#静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node-js框架快速搭建静态页面服务器：" class="headerlink" title="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node.js框架快速搭建静态页面服务器："></a>静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node.js框架快速搭建静态页面服务器：</h3><h3 id="用Express"><a href="#用Express" class="headerlink" title="用Express"></a>用<strong>Express</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(express.static(__dirname + <span class="string">"/"</span>, &#123;<span class="attr">index</span>: <span class="string">"index.htm"</span>&#125;));</div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
-<h3 id="用Koa-Koa-static"><a href="#用Koa-Koa-static" class="headerlink" title="用Koa+Koa-static"></a>用<strong>Koa</strong>+<strong>Koa-static</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> serve = <span class="built_in">require</span>(<span class="string">'koa-static'</span>);</div><div class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">var</span> app = koa();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(serve(<span class="string">'.'</span>, &#123;<span class="attr">index</span>: <span class="string">"index.htm"</span>&#125;));</div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
-
-          
+          <h3 id="静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node-js框架快速搭建静态页面服务器："><a href="#静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node-js框架快速搭建静态页面服务器：" class="headerlink" title="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node.js框架快速搭建静态页面服务器："></a>静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，如何用Node.js框架快速搭建静态页面服务器：</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/07/static-server/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -501,78 +504,21 @@
 
       
         
-          
-            <h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
+          <h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
 <li>王玉龙 / 男 / 1991</li>
 <li>本科 / 1年工作经验</li>
-<li>Github: <a href="https://github.com/loiee" target="_blank" rel="external">https://github.com/loiee</a></li>
+<li>Github: <a href="https://github.com/loiee">https://github.com/loiee</a></li>
 <li>手机 : 18271315671</li>
 <li>Email : wylong666@gmail.com</li>
 <li>QQ/微信 : 515958725</li>
 </ul>
-<h2 id="技术能力"><a href="#技术能力" class="headerlink" title="技术能力"></a>技术能力</h2><ul>
-<li><strong>计算机基础</strong><ul>
-<li>了解计算机网络的基本原理，了解 <strong>HTTP协议</strong></li>
-<li>了解基础的<strong>编码知识</strong>如 base64，utf8 的表示等</li>
-<li>了解常见的数据结构和算法</li>
-</ul>
-</li>
-<li><strong>CSS/HTML</strong><ul>
-<li>熟悉W3C标准，能编写语义化<strong>HTML</strong></li>
-<li>通读《CSS权威指南》、《The Book of CSS3》 熟练掌握盒模型、行内及块级格式化、float、<strong>flex</strong>、移动端布局，熟悉<strong>HTML5</strong>、<strong>CSS3</strong>新特性并有所使用</li>
-<li>熟悉 Less、Sass 等 <strong>CSS</strong> 预处理语言，熟练使用 <strong>Bootstrap</strong> 等框架。</li>
-</ul>
-</li>
-<li><strong>JavaScript</strong><ul>
-<li>熟悉 DOM <strong>原生API</strong>，理解 JS<strong>原型</strong>、<strong>闭包</strong>、<strong>高阶</strong>、<strong>异步</strong>等概念，熟练使用Ajax，JSON等技术，了解<strong>ES6</strong>规范及新特性</li>
-<li>熟悉MVVM设计模式，熟悉 <strong>Vue</strong> 、<strong>Vue-router</strong>，<strong>Vue-cli</strong>等框架的基本使用</li>
-<li>熟练使用开发工具如 <strong>DevTools</strong> <strong>debug</strong> 代码，使用Chrome搜索并解决问题</li>
-<li>对新技术有较强的<strong>自学能力</strong>，能较为流畅的阅读英文开发文档及其他资料</li>
-<li>熟练使用 <strong>Git</strong> 版本管理工具，了解<strong>前端性能优化</strong>、<strong>前端工程化</strong>，了解 <strong>Webpack</strong> 等代码构建工具的使用</li>
-</ul>
-</li>
-<li><strong>Node.js</strong><ul>
-<li>了解 <strong>Node</strong> 的基本原理及其模块机制</li>
-<li>了解 Node 基本模块的使用并可实现简单的前后端网站</li>
-<li>了解 <strong>Express/Koa</strong> 等第三方框架  </li>
-</ul>
-</li>
-<li>对前端有着极大兴趣，并持续学习中</li>
-</ul>
-<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><ul>
-<li><strong>仿饿了么web app</strong><ul>
-<li>用到<strong>Vue</strong>，<strong>Vue-router</strong>，<strong>ES6</strong>，<strong>LESS</strong>，<strong>组件化</strong>等技术 </li>
-<li><a href="https://github.com/loiee/eleme" target="_blank" rel="external"><strong>源码地址</strong></a></li>
-<li><a href="https://wylong.site:3000" target="_blank" rel="external"><strong>DEMO地址</strong></a></li>
-</ul>
-</li>
-<li><strong>用 Vue 制作的词典</strong><ul>
-<li>用到<strong>Vue</strong>，<strong>Ajax</strong>，<strong>localStorage</strong> 等技术 </li>
-<li>支持搜索自动完成，发音，生词表等功能</li>
-<li><a href="https://github.com/loiee/dictionary" target="_blank" rel="external"><strong>源码地址</strong></a></li>
-<li><a href="https://wylong.site" target="_blank" rel="external"><strong>DEMO地址</strong></a></li>
-</ul>
-</li>
-<li><strong>Mini-jsbin</strong><ul>
-<li>原生JS+第三方框架实现的编辑器 </li>
-<li>支持HTML/CSS/JS实时编辑，自动完成，代码高亮等功能</li>
-<li><a href="https://github.com/loiee/mini-jsbin" target="_blank" rel="external"><strong>源码地址</strong></a></li>
-<li><a href="https://loiee.github.io/mini-jsbin/" target="_blank" rel="external"><strong>DEMO地址</strong></a> </li>
-</ul>
-</li>
-<li><strong>实现Lodash大部分函数</strong><ul>
-<li>原生JS实现大部分Lodash函数 </li>
-<li><a href="https://github.com/loiee/learn_lodash" target="_blank" rel="external"><strong>源码地址</strong></a></li>
-</ul>
-</li>
-<li><strong>基础的 JSON parser</strong><ul>
-<li>原生js实现，能解析基本的JSON数据 </li>
-<li><a href="https://github.com/loiee/json-parser" target="_blank" rel="external"><strong>源码地址</strong></a></li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/resume/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
