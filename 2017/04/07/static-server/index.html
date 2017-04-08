@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
+<meta name="description" content="静态文件静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速搭建静态页面服务器">
 <meta property="og:url" content="http://yoursite.com/2017/04/07/static-server/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
-<meta property="og:updated_time" content="2017-04-07T14:19:27.236Z">
+<meta property="og:description" content="静态文件静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
+<meta property="og:updated_time" content="2017-04-08T07:18:39.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速搭建静态页面服务器">
-<meta name="twitter:description" content="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
+<meta name="twitter:description" content="静态文件静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢">
 
 
 
@@ -353,9 +353,10 @@
       
 
       
-        <h4 id="静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node-js框架快速搭建静态页面服务器呢"><a href="#静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node-js框架快速搭建静态页面服务器呢" class="headerlink" title="静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢"></a>静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢</h4><a id="more"></a>
-<h3 id="用Express"><a href="#用Express" class="headerlink" title="用Express"></a>用<strong>Express</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(express.static(__dirname + <span class="string">"/"</span>, &#123;<span class="attr">index</span>: <span class="string">"index.html"</span>&#125;));</div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
-<h3 id="用Koa-koa-static"><a href="#用Koa-koa-static" class="headerlink" title="用Koa+koa-static"></a>用<strong>Koa</strong>+<strong>koa-static</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> serve = <span class="built_in">require</span>(<span class="string">'koa-static'</span>);</div><div class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">var</span> app = koa();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(serve(<span class="string">'.'</span>, &#123;<span class="attr">index</span>: <span class="string">"index.html"</span>&#125;)); <span class="comment">//默认为index.html</span></div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
+        <h3 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h3><p>静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢</p>
+<a id="more"></a>
+<h3 id="Express"><a href="#Express" class="headerlink" title="Express"></a><strong>Express</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(express.static(__dirname + <span class="string">"/"</span>, &#123;<span class="attr">index</span>: <span class="string">"index.html"</span>&#125;));</div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
+<h3 id="Koa-koa-static"><a href="#Koa-koa-static" class="headerlink" title="Koa+koa-static"></a><strong>Koa</strong>+<strong>koa-static</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> serve = <span class="built_in">require</span>(<span class="string">'koa-static'</span>);</div><div class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</div><div class="line"><span class="keyword">var</span> app = koa();</div><div class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</div><div class="line">app.use(serve(<span class="string">'.'</span>, &#123;<span class="attr">index</span>: <span class="string">"index.html"</span>&#125;)); <span class="comment">//默认为index.html</span></div><div class="line">app.listen(port);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'httpServer at http://localhost:'</span> + port);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -513,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件一般指js-css-html，图片视频-还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node-js框架快速搭建静态页面服务器呢"><span class="nav-number">1.</span> <span class="nav-text">静态文件一般指js,css,html，图片视频,还有一些供人下载的文件之类，不涉及、后台、数据库等操作，那么如何用Node.js框架快速搭建静态页面服务器呢</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Express"><span class="nav-number"></span> <span class="nav-text">用Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Koa-koa-static"><span class="nav-number"></span> <span class="nav-text">用Koa+koa-static</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态文件"><span class="nav-number">1.</span> <span class="nav-text">静态文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Express"><span class="nav-number">2.</span> <span class="nav-text">Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Koa-koa-static"><span class="nav-number">3.</span> <span class="nav-text">Koa+koa-static</span></a></li></ol></div>
             
 
           </div>
