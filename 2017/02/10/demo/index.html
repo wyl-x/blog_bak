@@ -87,16 +87,31 @@
 
 
 
-<meta name="description" content="通过JS模拟事件的绑定、触发和取消绑定。">
+<meta name="description" content="小项目DEMO
+Vue 小词典: http://wylong.site/
+饿了么web app: http://wylong.site:3000
+JS/CSS/HTML在线编辑: https://loiee.github.io/mini-jsbin
+人机五子棋: https://loiee.github.io/wuziqi
+todos记事本: https://loiee.github.io/tod">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS模拟自定义事件">
-<meta property="og:url" content="http://yoursite.com/2016/12/23/eventer/index.html">
+<meta property="og:title" content="个人小项目汇总">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/demo/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="通过JS模拟事件的绑定、触发和取消绑定。">
-<meta property="og:updated_time" content="2017-04-10T06:26:16.593Z">
+<meta property="og:description" content="小项目DEMO
+Vue 小词典: http://wylong.site/
+饿了么web app: http://wylong.site:3000
+JS/CSS/HTML在线编辑: https://loiee.github.io/mini-jsbin
+人机五子棋: https://loiee.github.io/wuziqi
+todos记事本: https://loiee.github.io/tod">
+<meta property="og:updated_time" content="2017-04-10T10:59:42.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS模拟自定义事件">
-<meta name="twitter:description" content="通过JS模拟事件的绑定、触发和取消绑定。">
+<meta name="twitter:title" content="个人小项目汇总">
+<meta name="twitter:description" content="小项目DEMO
+Vue 小词典: http://wylong.site/
+饿了么web app: http://wylong.site:3000
+JS/CSS/HTML在线编辑: https://loiee.github.io/mini-jsbin
+人机五子棋: https://loiee.github.io/wuziqi
+todos记事本: https://loiee.github.io/tod">
 
 
 
@@ -124,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/23/eventer/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/10/demo/"/>
 
 
 
 
 
-  <title> JS模拟自定义事件 | 前端笔记 </title>
+  <title> 个人小项目汇总 | 前端笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/eventer/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/10/demo/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="WangYulong">
@@ -281,7 +296,7 @@
             
             
               
-                JS模拟自定义事件
+                个人小项目汇总
               
             
           </h1>
@@ -296,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T23:31:16+08:00">
-                2016-12-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-10T18:22:23+08:00">
+                2017-02-10
               </time>
             
 
@@ -315,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/23/eventer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/eventer/" itemprop="commentCount"></span>
+                <a href="/2017/02/10/demo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/10/demo/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -324,7 +339,7 @@
 
           
           
-             <span id="/2016/12/23/eventer/" class="leancloud_visitors" data-flag-title="JS模拟自定义事件">
+             <span id="/2017/02/10/demo/" class="leancloud_visitors" data-flag-title="个人小项目汇总">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,10 +368,25 @@
       
 
       
-        <p>通过JS模拟事件的绑定、触发和取消绑定。<br><a id="more"></a><br>代码<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//模拟事件绑定 </span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Eventer</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.methods = &#123;&#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    on(type, handler) &#123;</div><div class="line">        <span class="keyword">this</span>.methods[type] = <span class="keyword">this</span>.methods[type] || []</div><div class="line">        <span class="keyword">this</span>.methods[type].push(handler)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    trigger(type, data) &#123;</div><div class="line">        <span class="keyword">this</span>.methods[type] &amp;&amp; <span class="keyword">this</span>.methods[type].forEach(<span class="function"><span class="params">fn</span> =&gt;</span> &#123;</div><div class="line">            fn.call(<span class="keyword">this</span>, data)</div><div class="line">        &#125;)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    remove(type) &#123;</div><div class="line">        <span class="keyword">delete</span> <span class="keyword">this</span>.methods[type]</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>函数内部返回 this 对象可实现链式调用。  </p>
-<p>如何使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> e=<span class="keyword">new</span> Eventer()</div><div class="line"></div><div class="line"><span class="comment">//绑定click事件</span></div><div class="line">e.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'CLICKED'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//触发click事件</span></div><div class="line">e.trigger(<span class="string">'click'</span>)</div><div class="line"></div><div class="line"><span class="comment">//移除事件</span></div><div class="line">e.remove(<span class="string">'click'</span>)</div></pre></td></tr></table></figure>
+        <h5 id="小项目DEMO"><a href="#小项目DEMO" class="headerlink" title="小项目DEMO"></a>小项目DEMO</h5><ul>
+<li><strong>Vue 小词典:</strong> <a href="http://wylong.site/" target="_blank" rel="external">http://wylong.site/</a></li>
+<li><strong>饿了么web app:</strong> <a href="http://wylong.site:3000" target="_blank" rel="external">http://wylong.site:3000</a></li>
+<li><strong>JS/CSS/HTML在线编辑:</strong> <a href="https://loiee.github.io/mini-jsbin" target="_blank" rel="external">https://loiee.github.io/mini-jsbin</a></li>
+<li><strong>人机五子棋:</strong> <a href="https://loiee.github.io/wuziqi" target="_blank" rel="external">https://loiee.github.io/wuziqi</a></li>
+<li><strong>todos记事本:</strong> <a href="https://loiee.github.io/todos" target="_blank" rel="external">https://loiee.github.io/todos</a></li>
+<li><strong>图片等比例自适应布局:</strong> <a href="http://wylong.site/cats.html" target="_blank" rel="external">http://wylong.site/cats.html</a></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><strong>JS时钟:</strong> <a href="http://wylong.site/clock/" target="_blank" rel="external">http://wylong.site/clock/</a></li>
+<li><strong>CSS3变换:</strong> <a href="http://wylong.site/css3/" target="_blank" rel="external">http://wylong.site/css3/</a></li>
+<li><strong>JS画函数图:</strong> <a href="http://wylong.site/draw_function.html" target="_blank" rel="external">http://wylong.site/draw_function.html</a></li>
+<li><strong>JS日历:</strong> <a href="http://wylong.site/calendar/" target="_blank" rel="external">http://wylong.site/calendar/</a></li>
+<li><strong>rem移动端布局:</strong> <a href="http://wylong.site/rem/" target="_blank" rel="external">http://wylong.site/rem/</a></li>
+<li><strong>creative-links:</strong> <a href="http://wylong.site/creative-links/" target="_blank" rel="external">http://wylong.site/creative-links/</a></li>
+<li><strong>滚动效果:</strong> <a href="http://wylong.site/shoes/" target="_blank" rel="external">http://wylong.site/shoes/</a></li>
+<li><strong>仿小米官网:</strong> <a href="http://wylong.site/mi/" target="_blank" rel="external">http://wylong.site/mi/</a></li>
+</ul>
 
       
     </div>
@@ -387,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/20/draw_function/" rel="next" title="JS画函数对象">
-                <i class="fa fa-chevron-left"></i> JS画函数对象
+              <a href="/2017/02/10/resume/" rel="next" title="个人简历">
+                <i class="fa fa-chevron-left"></i> 个人简历
               </a>
             
           </div>
@@ -397,8 +427,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/20/format_date/" rel="prev" title="格式化日期对象">
-                格式化日期对象 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/13/static-server/" rel="prev" title="快速搭建静态页面服务器">
+                快速搭建静态页面服务器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -425,8 +455,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/23/eventer/"
-           data-title="JS模拟自定义事件" data-url="http://yoursite.com/2016/12/23/eventer/">
+      <div class="ds-thread" data-thread-key="2017/02/10/demo/"
+           data-title="个人小项目汇总" data-url="http://yoursite.com/2017/02/10/demo/">
       </div>
     
   </div>
@@ -450,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -495,6 +534,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#小项目DEMO"><span class="nav-number">1.</span> <span class="nav-text">小项目DEMO</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
