@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="ECMAScriptECMAScript标准的历史版本分别是1、2、3、5，第4版因改动太多而遭废除。2009年发布的改进版本ES5，引入了Object.create()、Object.defineProperty()、getters和setters、严格模式，JSON对象，数组方法如map、filter、reduce，函数bind方法等。ES6是在2015年发布的，所以又称ECMAScript">
+<meta name="description" content="记录一些前端学习中的问题和总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6常用语法(一)">
-<meta property="og:url" content="http://yoursite.com/2017/04/08/es6-1/index.html">
+<meta property="og:title" content="hello hexo！">
+<meta property="og:url" content="http://yoursite.com/2016/07/13/hello-world/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="ECMAScriptECMAScript标准的历史版本分别是1、2、3、5，第4版因改动太多而遭废除。2009年发布的改进版本ES5，引入了Object.create()、Object.defineProperty()、getters和setters、严格模式，JSON对象，数组方法如map、filter、reduce，函数bind方法等。ES6是在2015年发布的，所以又称ECMAScript">
-<meta property="og:updated_time" content="2017-04-08T07:21:29.624Z">
+<meta property="og:description" content="记录一些前端学习中的问题和总结。">
+<meta property="og:updated_time" content="2017-04-10T05:31:10.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6常用语法(一)">
-<meta name="twitter:description" content="ECMAScriptECMAScript标准的历史版本分别是1、2、3、5，第4版因改动太多而遭废除。2009年发布的改进版本ES5，引入了Object.create()、Object.defineProperty()、getters和setters、严格模式，JSON对象，数组方法如map、filter、reduce，函数bind方法等。ES6是在2015年发布的，所以又称ECMAScript">
+<meta name="twitter:title" content="hello hexo！">
+<meta name="twitter:description" content="记录一些前端学习中的问题和总结。">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/08/es6-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/13/hello-world/"/>
 
 
 
 
 
-  <title> ES6常用语法(一) | 前端笔记 </title>
+  <title> hello hexo！ | 前端笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/08/es6-1/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/13/hello-world/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="WangYulong">
@@ -281,7 +281,7 @@
             
             
               
-                ES6常用语法(一)
+                hello hexo！
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-08T13:53:03+08:00">
-                2017-04-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-13T20:35:26+08:00">
+                2016-07-13
               </time>
             
 
@@ -315,8 +315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/08/es6-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/08/es6-1/" itemprop="commentCount"></span>
+                <a href="/2016/07/13/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/13/hello-world/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -324,7 +324,7 @@
 
           
           
-             <span id="/2017/04/08/es6-1/" class="leancloud_visitors" data-flag-title="ES6常用语法(一)">
+             <span id="/2016/07/13/hello-world/" class="leancloud_visitors" data-flag-title="hello hexo！">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,13 +353,7 @@
       
 
       
-        <h3 id="ECMAScript"><a href="#ECMAScript" class="headerlink" title="ECMAScript"></a>ECMAScript</h3><p>ECMAScript标准的历史版本分别是1、2、3、5，第4版因改动太多而遭废除。2009年发布的改进版本ES5，引入了Object.create()、Object.defineProperty()、getters和setters、严格模式，JSON对象，数组方法如map、filter、reduce，函数bind方法等。ES6是在2015年发布的，所以又称ECMAScript 2015。目前并不是所有浏览器都能兼容ES6全部特性，但可以用ES6转码工具将ES6代码转为ES5代码，例如Babel。下面总结一下常用的ES6语法。<br><a id="more"></a></p>
-<h3 id="1-let和const"><a href="#1-let和const" class="headerlink" title="1 .let和const"></a>1 .let和const</h3><p>用来声明变量，和var比较起来，ES5中只有全局作用域和函数作用域，用let可以声明块级作用域，const声明常量且不可改变。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;, <span class="number">1000</span>)</div><div class="line">&#125; <span class="comment">// 1s之后控制台输出5个5</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;, <span class="number">1000</span>)</div><div class="line">&#125; <span class="comment">// 1s之后输出0,1,2,3,4</span></div></pre></td></tr></table></figure></p>
-<h3 id="2-箭头函数"><a href="#2-箭头函数" class="headerlink" title="2 .箭头函数"></a>2 .箭头函数</h3><p>注意箭头函数没有自己的this对象，会继承外面的this对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name) &#123;</div><div class="line">        <span class="keyword">this</span>.name = name</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    sayHi() &#123;</div><div class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'I\'m'</span> + <span class="string">'this.name'</span>)</div><div class="line">        &#125;, <span class="number">0</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="3-模板字符串"><a href="#3-模板字符串" class="headerlink" title="3 .模板字符串"></a>3 .模板字符串</h3><p>再也不怕字符串拼接的一堆<code>+</code>了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> foo = <span class="keyword">new</span> People(<span class="string">'foo'</span>)</div><div class="line"><span class="built_in">console</span>.log(<span class="string">`This is <span class="subst">$&#123;foo.name&#125;</span>`</span>)</div></pre></td></tr></table></figure></p>
-<p>用模板字符串还可以自由换行。</p>
-<h3 id="4-class，extends，super"><a href="#4-class，extends，super" class="headerlink" title="4 .class，extends，super"></a>4 .class，extends，super</h3><p>引入了<code>Class</code>（类）这个概念，更像面向对象编程的语法。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.type = <span class="string">'animal'</span></div><div class="line">    &#125;</div><div class="line">    sayHi() &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`Hi`</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">super</span>()</div><div class="line">        <span class="keyword">this</span>.type = <span class="string">'cat'</span></div><div class="line">    &#125;</div><div class="line">    sayHi() &#123;</div><div class="line">        <span class="keyword">super</span>.sayHi()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>如果子类中存在构造函数，则需要在使用<code>this</code>之前首先调用<code>super()</code>。<code>super</code> 关键字指代父类的实例（即父类的<code>this</code>对象）,可用于调用对象的父对象上的函数。</p>
+        <p> 记录一些前端学习中的问题和总结。</p>
 
       
     </div>
@@ -390,15 +384,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/07/static-server/" rel="next" title="快速搭建静态页面服务器">
-                <i class="fa fa-chevron-left"></i> 快速搭建静态页面服务器
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/20/draw_function/" rel="prev" title="JS画函数对象">
+                JS画函数对象 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -424,8 +418,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/08/es6-1/"
-           data-title="ES6常用语法(一)" data-url="http://yoursite.com/2017/04/08/es6-1/">
+      <div class="ds-thread" data-thread-key="2016/07/13/hello-world/"
+           data-title="hello hexo！" data-url="http://yoursite.com/2016/07/13/hello-world/">
       </div>
     
   </div>
@@ -449,17 +443,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -474,7 +459,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -503,22 +488,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-let和const"><span class="nav-number">2.</span> <span class="nav-text">1 .let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-箭头函数"><span class="nav-number">3.</span> <span class="nav-text">2 .箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-模板字符串"><span class="nav-number">4.</span> <span class="nav-text">3 .模板字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-class，extends，super"><span class="nav-number">5.</span> <span class="nav-text">4 .class，extends，super</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
