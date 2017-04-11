@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="代码">
+<meta name="description" content="记录一些前端学习中的问题和总结，有总结才会进步。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="格式化日期对象">
-<meta property="og:url" content="http://yoursite.com/2017/01/20/format_date/index.html">
+<meta property="og:title" content="hello hexo！">
+<meta property="og:url" content="http://yoursite.com/2016/08/13/hello-world/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="代码">
-<meta property="og:updated_time" content="2017-04-10T06:51:40.952Z">
+<meta property="og:description" content="记录一些前端学习中的问题和总结，有总结才会进步。">
+<meta property="og:updated_time" content="2017-04-11T07:05:36.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="格式化日期对象">
-<meta name="twitter:description" content="代码">
+<meta name="twitter:title" content="hello hexo！">
+<meta name="twitter:description" content="记录一些前端学习中的问题和总结，有总结才会进步。">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/20/format_date/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/13/hello-world/"/>
 
 
 
 
 
-  <title> 格式化日期对象 | 前端笔记 </title>
+  <title> hello hexo！ | 前端笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/format_date/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/13/hello-world/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="WangYulong">
@@ -281,7 +281,7 @@
             
             
               
-                格式化日期对象
+                hello hexo！
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T22:21:13+08:00">
-                2017-01-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-13T20:35:26+08:00">
+                2016-08-13
               </time>
             
 
@@ -315,8 +315,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/20/format_date/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/format_date/" itemprop="commentCount"></span>
+                <a href="/2016/08/13/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/13/hello-world/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -324,7 +324,7 @@
 
           
           
-             <span id="/2017/01/20/format_date/" class="leancloud_visitors" data-flag-title="格式化日期对象">
+             <span id="/2016/08/13/hello-world/" class="leancloud_visitors" data-flag-title="hello hexo！">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,8 +353,7 @@
       
 
       
-        <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><a id="more"></a>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">    <span class="comment">/**</span></div><div class="line">     * 把日期对象转化为指定格式</div><div class="line">     * @param  &#123;[Object]&#125; date [日期对象]</div><div class="line">     * @param  &#123;[String]&#125; fmt  [例如 'yyyy-MM-dd hh:mm']</div><div class="line">     * @return &#123;[String]&#125;      [2017-01-01 01:01]</div><div class="line">     */</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">date, fmt</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt)) &#123;</div><div class="line">            fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (date.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length))</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> o = &#123;</div><div class="line">            <span class="string">'M+'</span>: date.getMonth() + <span class="number">1</span>,</div><div class="line">            <span class="string">'d+'</span>: date.getDate(),</div><div class="line">            <span class="string">'h+'</span>: date.getHours(),</div><div class="line">            <span class="string">'m+'</span>: date.getMinutes(),</div><div class="line">            <span class="string">'s+'</span>: date.getSeconds()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> o) &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`(<span class="subst">$&#123;k&#125;</span>)`</span>).test(fmt)) &#123;</div><div class="line">                <span class="keyword">let</span> str = o[k] + <span class="string">''</span></div><div class="line">                fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length === <span class="number">1</span>) ? str : padLeftZero(str))</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> fmt</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">padLeftZero</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> (<span class="string">'00'</span> + str).substr(str.length)</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"></div><div class="line">#### 如何使用</div><div class="line"></div><div class="line">`<span class="string">``</span>js</div><div class="line">    formatDate(<span class="keyword">new</span> <span class="built_in">Date</span>(),<span class="string">'yyyy-MM-dd hh:mm'</span>)</div><div class="line">    <span class="comment">//"2017-01-20 21:45"</span></div><div class="line"></div><div class="line">    formatDate(<span class="keyword">new</span> <span class="built_in">Date</span>(),<span class="string">'yy-MM-dd hh:mm'</span>)</div><div class="line">    <span class="comment">//"17-01-20 21:45"</span></div><div class="line"></div><div class="line">    formatDate(<span class="keyword">new</span> <span class="built_in">Date</span>(),<span class="string">'yy年MM月dd日 hh分mm秒'</span>)</div><div class="line">    <span class="comment">//"17年01月20日 45分47秒"</span></div></pre></td></tr></table></figure>
+        <p> 记录一些前端学习中的问题和总结，有总结才会进步。</p>
 
       
     </div>
@@ -385,18 +384,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/23/eventer/" rel="next" title="JS模拟自定义事件">
-                <i class="fa fa-chevron-left"></i> JS模拟自定义事件
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/02/optimize/" rel="prev" title="如何做好前端性能优化">
-                如何做好前端性能优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/20/draw_function/" rel="prev" title="JS画函数图象">
+                JS画函数图象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,8 +418,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/20/format_date/"
-           data-title="格式化日期对象" data-url="http://yoursite.com/2017/01/20/format_date/">
+      <div class="ds-thread" data-thread-key="2016/08/13/hello-world/"
+           data-title="hello hexo！" data-url="http://yoursite.com/2016/08/13/hello-world/">
       </div>
     
   </div>
@@ -448,17 +443,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -502,22 +488,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
