@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,JSON," />
+  <meta name="keywords" content="JavaScript,排序," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="ES5提供一个内置的（全局）JSON对象，可用来序列化（JSON.stringfy）和反序列化（parse）对象为JSON格式绑定，下面是自己尝试实现的一个JSON parser函数。">
+<meta name="description" content="学习写一下排序算法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS实现简易JSON Parser">
-<meta property="og:url" content="http://yoursite.com/2016/11/29/parse_json/index.html">
+<meta property="og:title" content="JS常见排序算法">
+<meta property="og:url" content="http://yoursite.com/2016/12/29/sort/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="ES5提供一个内置的（全局）JSON对象，可用来序列化（JSON.stringfy）和反序列化（parse）对象为JSON格式绑定，下面是自己尝试实现的一个JSON parser函数。">
-<meta property="og:updated_time" content="2017-04-11T08:38:12.294Z">
+<meta property="og:description" content="学习写一下排序算法。">
+<meta property="og:updated_time" content="2017-04-11T09:56:12.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS实现简易JSON Parser">
-<meta name="twitter:description" content="ES5提供一个内置的（全局）JSON对象，可用来序列化（JSON.stringfy）和反序列化（parse）对象为JSON格式绑定，下面是自己尝试实现的一个JSON parser函数。">
+<meta name="twitter:title" content="JS常见排序算法">
+<meta name="twitter:description" content="学习写一下排序算法。">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/29/parse_json/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/29/sort/"/>
 
 
 
 
 
-  <title> JS实现简易JSON Parser | 前端笔记 </title>
+  <title> JS常见排序算法 | 前端笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/29/parse_json/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/29/sort/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="WangYulong">
@@ -301,7 +301,7 @@
             
             
               
-                JS实现简易JSON Parser
+                JS常见排序算法
               
             
           </h1>
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-29T20:01:14+08:00">
-                2016-11-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T18:34:16+08:00">
+                2016-12-29
               </time>
             
 
@@ -357,8 +357,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/11/29/parse_json/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/29/parse_json/" itemprop="commentCount"></span>
+                <a href="/2016/12/29/sort/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/29/sort/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,7 +366,7 @@
 
           
           
-             <span id="/2016/11/29/parse_json/" class="leancloud_visitors" data-flag-title="JS实现简易JSON Parser">
+             <span id="/2016/12/29/sort/" class="leancloud_visitors" data-flag-title="JS常见排序算法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -395,11 +395,13 @@
       
 
       
-        <p>ES5提供一个内置的（全局）JSON对象，可用来序列化（JSON.stringfy）和反序列化（parse）对象为JSON格式绑定，下面是自己尝试实现的一个JSON parser函数。</p>
-<a id="more"></a>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * [解析JSON数据为JS对象]</div><div class="line"> * @param  &#123;[String]&#125; str [JSON数据]</div><div class="line"> * @return &#123;[Object]&#125;     [JS对象]</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseJson</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> json = str</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span></div><div class="line">    <span class="keyword">return</span> parse()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parse</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!<span class="built_in">isNaN</span>(json[i])) &#123;</div><div class="line">            <span class="keyword">return</span> parseNumber()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'"'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseString()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'t'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseTrue()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'f'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseFalse()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'n'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseNull()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'['</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseArray()</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (json[i] === <span class="string">'&#123;'</span>) &#123;</div><div class="line">            <span class="keyword">return</span> parseObject()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 number</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseNumber</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> start = i</div><div class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">            i++</div><div class="line">            <span class="keyword">if</span> (<span class="built_in">isNaN</span>(json[i])) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="built_in">Number</span>(json.slice(start, i))</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 string</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseString</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> start = i + <span class="number">1</span></div><div class="line">        <span class="keyword">var</span> index = json.indexOf(<span class="string">'"'</span>, start)</div><div class="line">        <span class="keyword">var</span> string = json.slice(start, index)</div><div class="line">        i = index + <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> string</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 true</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseTrue</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        i = i + <span class="number">4</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 false</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseFalse</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        i = i + <span class="number">5</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 null</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseNull</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        i = i + <span class="number">4</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">null</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 array</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseArray</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> result = []</div><div class="line">        i++</div><div class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (json[i] === <span class="string">']'</span>) &#123;</div><div class="line">                i++</div><div class="line">                <span class="keyword">break</span></div><div class="line">            &#125;</div><div class="line">            result.push(parse())</div><div class="line">            <span class="keyword">if</span> (json[i] == <span class="string">','</span>) &#123;</div><div class="line">                i++</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 解析 object</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">parseObject</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> result = &#123;&#125;</div><div class="line">        i++</div><div class="line">        <span class="keyword">var</span> key</div><div class="line">        <span class="keyword">var</span> value</div><div class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">            key = parseString()</div><div class="line">            i++</div><div class="line">            value = parse()</div><div class="line">            result[key] = value</div><div class="line">            <span class="keyword">if</span> (json[i] == <span class="string">'&#125;'</span>) &#123;</div><div class="line">                <span class="keyword">break</span></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                i++</div><div class="line">                <span class="keyword">continue</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> json = <span class="string">'&#123;"foo":true,"bar":2878,"str":"abcdef","a":null,"arr":[true,1,2],"obj":&#123;"foo":"bar","ffo":"abc"&#125;&#125;'</span></div><div class="line"></div><div class="line">parseJson(json)</div><div class="line"></div><div class="line"><span class="comment">//Object &#123;foo: true, bar: 2878, str: "abcdef", a: null, arr: Array(3)…&#125;</span></div></pre></td></tr></table></figure>
-</code></pre>
+        <p>学习写一下排序算法。<br><a id="more"></a></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3> <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">let</span> swapped <span class="comment">// 检测是否发生交换</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr.length - i - <span class="number">1</span>; j++) &#123;</div><div class="line">            <span class="comment">// 如果相邻两项左边&gt;右边，则交换</span></div><div class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</div><div class="line">                <span class="comment">// ES6 交换变量：[a, b]=[b, a]</span></div><div class="line">                [arr[j], arr[j + <span class="number">1</span>]] = [arr[j + <span class="number">1</span>], arr[j]]</div><div class="line">                swaped = <span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (!swapped) &#123;</div><div class="line">            <span class="comment">// 若某一次未交换，返回数组</span></div><div class="line">            <span class="keyword">return</span> arr</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</div><div class="line">        <span class="keyword">let</span> minIndex = i <span class="comment">// 最小值的 Index</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;</div><div class="line">                minIndex = j</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (i !== minIndex) &#123;</div><div class="line">            <span class="comment">// 交换</span></div><div class="line">            [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> choosed = arr[<span class="number">0</span>]</div><div class="line">    <span class="keyword">let</span> left = [] <span class="comment">// 存储比 choosed 小的值</span></div><div class="line">    <span class="keyword">let</span> right = [] <span class="comment">// 存储比 choosed 大的值</span></div><div class="line">    <span class="keyword">if</span> (arr.length &lt; <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt;= choosed) &#123;</div><div class="line">            left.push(arr[i])</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            right.push(arr[i])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 递归，拼接</span></div><div class="line">    <span class="keyword">return</span> quickSort(left).concat(choosed).concat(quickSort(right))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种方法很容易理解，但每次生成两个数组，再加上递归，空间复杂度太高</p>
+<h3 id="快排优化版"><a href="#快排优化版" class="headerlink" title="快排优化版"></a>快排优化版</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr, start, end</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (start == <span class="literal">undefined</span>) &#123;</div><div class="line">        start = <span class="number">0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (end == <span class="literal">undefined</span>) &#123;</div><div class="line">        end = arr.length - <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (end - start &lt; <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> left = start</div><div class="line">    <span class="keyword">var</span> right = end</div><div class="line">    <span class="keyword">var</span> choose = arr[start]</div><div class="line">    </div><div class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</div><div class="line">        <span class="keyword">while</span> (arr[right] &gt;= choose &amp;&amp; left &lt; right) &#123;</div><div class="line">            right--</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (arr[left] &lt;= choose &amp;&amp; left &lt; right) &#123;</div><div class="line">            left++</div><div class="line">        &#125;</div><div class="line">        [arr[left], arr[right]] = [arr[right], arr[left]]</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    [arr[left], arr[start]] = [arr[start], arr[left]]</div><div class="line">    quickSort(arr, start, left - <span class="number">1</span>)</div><div class="line">    quickSort(arr, left + <span class="number">1</span>, end)</div><div class="line">    <span class="keyword">return</span> arr</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -424,7 +426,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/JSON/" rel="tag"># JSON</a>
+            <a href="/tags/排序/" rel="tag"># 排序</a>
           
         </div>
       
@@ -437,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/20/draw_function/" rel="next" title="JS画函数图象">
-                <i class="fa fa-chevron-left"></i> JS画函数图象
+              <a href="/2016/12/23/eventer/" rel="next" title="JS模拟自定义事件">
+                <i class="fa fa-chevron-left"></i> JS模拟自定义事件
               </a>
             
           </div>
@@ -447,8 +449,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/13/seo/" rel="prev" title="前端怎么做好SEO">
-                前端怎么做好SEO <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/20/format_date/" rel="prev" title="格式化日期对象">
+                格式化日期对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -475,8 +477,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/29/parse_json/"
-           data-title="JS实现简易JSON Parser" data-url="http://yoursite.com/2016/11/29/parse_json/">
+      <div class="ds-thread" data-thread-key="2016/12/29/sort/"
+           data-title="JS常见排序算法" data-url="http://yoursite.com/2016/12/29/sort/">
       </div>
     
   </div>
@@ -578,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">2.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快排"><span class="nav-number">3.</span> <span class="nav-text">快排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快排优化版"><span class="nav-number">4.</span> <span class="nav-text">快排优化版</span></a></li></ol></div>
             
 
           </div>
