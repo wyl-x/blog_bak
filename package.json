@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs"
+        "docs:dev": "vuepress dev src",
+        "docs:build": "vuepress build src && rm -rf ./docs && mv ./src/.vuepress/dist ./docs"
     },
     "devDependencies": {
         "vuepress": "^0.14.8"
