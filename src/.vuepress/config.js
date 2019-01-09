@@ -1,8 +1,8 @@
 module.exports = {
     title: '什么鬼',
     description: 'Just playing around',
+    base: '/blog/',
     themeConfig: {
-        base: '/blog/',
         repo: 'vuejs/vuepress',
         // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
         // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
