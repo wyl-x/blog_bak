@@ -7,5 +7,5 @@
 | zebra stripes | are neat      |    $1 |
 
 <ClientOnly>
-  <v-comment/>
+  <v-comment path="bar"/>
 </ClientOnly>

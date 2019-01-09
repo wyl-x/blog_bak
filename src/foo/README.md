@@ -14,5 +14,5 @@
 ```
 
 <ClientOnly>
-  <v-comment/>
+  <v-comment path="foo"/>
 </ClientOnly>

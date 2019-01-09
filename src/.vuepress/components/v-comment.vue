@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- id 将作为查询条件 -->
-        <span class="leancloud-visitors" data-flag-title="Your Article Title" :id="path">
+        <span :id="'/blog/'+path" class="leancloud-visitors" data-flag-title="Your Article Title">
             <em class="post-meta-item-text">阅读量</em>
             <i class="leancloud-visitors-count">1000000</i>
         </span>
@@ -17,9 +17,9 @@ window.AV = require('leancloud-storage');
 import Valine from 'valine';
 
 export default {
+    props: ['path'],
     data() {
         return {
-            path:'/blog/',
             msg: 'hello'
         };
     },
