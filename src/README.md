@@ -30,5 +30,5 @@ This is a dangerous warning
 :::
 
 <ClientOnly>
-  <v-comment path=""/>
+  <v-comment path="/"/>
 </ClientOnly>
