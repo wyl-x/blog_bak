@@ -28,3 +28,7 @@ This is a warning
 ::: danger
 This is a dangerous warning
 :::
+
+<ClientOnly>
+  <v-comment/>
+</ClientOnly>

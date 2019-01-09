@@ -12,3 +12,7 @@
         await foo;
     }
 ```
+
+<ClientOnly>
+  <v-comment/>
+</ClientOnly>
