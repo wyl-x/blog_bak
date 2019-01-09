@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- id 将作为查询条件 -->
-        <span class="leancloud-visitors" data-flag-title="Your Article Title" id="/blog">
+        <span class="leancloud-visitors" data-flag-title="Your Article Title" :id="path">
             <em class="post-meta-item-text">阅读量</em>
             <i class="leancloud-visitors-count">1000000</i>
         </span>
@@ -19,6 +19,7 @@ import Valine from 'valine';
 export default {
     data() {
         return {
+            path:'/blog/',
             msg: 'hello'
         };
     },
