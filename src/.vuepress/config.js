@@ -1,7 +1,7 @@
 module.exports = {
     title: '什么鬼',
     description: 'Just playing around',
-    base: '/blog/',
+    base: '/',
     themeConfig: {
         repo: 'vuejs/vuepress',
         // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
