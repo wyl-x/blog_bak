@@ -4,6 +4,7 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
+    "glob": "^7.1.6",
     "vuepress": "^1.5.2"
   }
 }

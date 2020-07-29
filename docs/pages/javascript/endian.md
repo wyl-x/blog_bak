@@ -4,7 +4,8 @@
 1. Little endian：小端字节序, 将低序字节存储在起始地址
 2. Big endian：大端字节序, 将高序字节存储在起始地址
 
-## JS里面的体现: 同一段数据用不同视图读取
+## JS里面的体现
+同一段数据用不同视图读取
 ```js
 const uint8 = new Uint8Array([1, 2]);
 // Uint8Array(2) [1, 2]
